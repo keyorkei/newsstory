@@ -311,7 +311,7 @@ a {
 }
 
 .heatmap-chart {
-  height: 510px;
+  height: 680px;
 }
 
 .model-chart {
@@ -371,7 +371,7 @@ figcaption small {
 
 .timeline-visual {
   position: relative;
-  min-height: 880px;
+  min-height: 1220px;
   padding: 26px 0 18px;
 }
 
@@ -426,6 +426,10 @@ figcaption small {
 
 .timeline-item .dot.accent {
   background: var(--orange);
+}
+
+.timeline-item .dot.alert {
+  background: #ef4444;
 }
 
 .timeline-item::after {
@@ -701,7 +705,7 @@ figcaption small {
   }
 
   .heatmap-chart {
-    height: 540px;
+    height: 760px;
   }
 
   .model-chart {
@@ -807,7 +811,7 @@ figcaption small {
   }
 
   .heatmap-chart {
-    height: 570px;
+    height: 820px;
   }
 
   .model-chart {

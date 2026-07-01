@@ -265,14 +265,14 @@ function setupCharts() {
 
   init("chart-industry", {
     title: {
-      text: "吃喝场景占据联名案例主场",
+      text: "吃喝场景仍是主场，行业向外扩散",
       left: "center",
       top: 4,
       textStyle: { ...baseText, fontSize: 18, fontWeight: 800 },
     },
     tooltip: { trigger: "item", formatter: "{b}<br/>{d}%" },
     legend: { bottom: 0, textStyle: baseText },
-    color: [blue, sky, orange, amber, "#94A3B8"],
+    color: [blue, orange, amber, sky, "#60A5FA", teal, "#A78BFA", "#FCA5A5", "#BAE6FD", "#86EFAC"],
     series: [
       {
         name: "行业分布",
@@ -288,26 +288,47 @@ function setupCharts() {
           lineHeight: 20,
         },
         data: [
-          { value: 33.3, name: "茶饮" },
-          { value: 25, name: "咖啡" },
-          { value: 25, name: "快餐/餐饮" },
-          { value: 8.3, name: "零售" },
-          { value: 8.3, name: "潮玩零售" },
+          { value: 27.7, name: "茶饮" },
+          { value: 19.1, name: "快餐/餐饮" },
+          { value: 12.8, name: "咖啡" },
+          { value: 10.6, name: "快消饮料" },
+          { value: 10.6, name: "数码/3C" },
+          { value: 8.5, name: "零售" },
+          { value: 4.3, name: "服饰" },
+          { value: 2.1, name: "美妆" },
+          { value: 2.1, name: "潮玩零售" },
+          { value: 2.1, name: "工具App" },
         ],
       },
     ],
   });
 
-  const heatRows = ["必胜客×原神", "喜茶×光与夜之恋", "名创优品×Chiikawa", "古茗×恋与深空", "瑞幸×黑神话", "泡泡玛特×哪吒2", "古茗×星穹铁道"];
+  const heatRows = [
+    "瑞幸×黑神话：悟空",
+    "古茗×星穹铁道",
+    "名创优品×Chiikawa",
+    "泡泡玛特×哪吒之魔童闹海",
+    "茶百道×未定事件簿",
+    "茶百道×星穹铁道",
+    "古茗×恋与深空",
+    "古茗×天官赐福",
+    "必胜客×原神",
+    "肯德基×原神",
+    "必胜客×鸣潮",
+  ];
   const heatCols = ["排队", "售罄", "黄牛/二手溢价", "App/小程序崩溃", "官方回应/道歉"];
   const heatValues = [
-    [1, 1, 0, 1, 0],
-    [1, 0, 1, 0, 1],
-    [1, 1, 1, 0, 1],
-    [1, 0, 0, 0, 1],
     [1, 1, 1, 1, 1],
-    [1, 1, 1, 0, 1],
     [1, 1, 0, 1, 1],
+    [1, 1, 1, 0, 1],
+    [1, 1, 1, 0, 1],
+    [1, 1, 0, 1, 0],
+    [1, 1, 1, 0, 0],
+    [1, 1, 0, 0, 1],
+    [1, 1, 0, 0, 1],
+    [1, 1, 0, 1, 0],
+    [1, 1, 0, 0, 0],
+    [1, 1, 0, 0, 0],
   ];
   init("chart-heatmap", {
     title: {
@@ -323,7 +344,7 @@ function setupCharts() {
         return `${heatRows[y]}<br>${heatCols[x]}：${value ? "出现" : "未见明显表现"}`;
       },
     },
-    grid: { left: 132, right: 16, top: 74, bottom: 94 },
+    grid: { left: 190, right: 16, top: 74, bottom: 94 },
     xAxis: {
       type: "category",
       data: heatCols,
@@ -335,7 +356,7 @@ function setupCharts() {
       type: "category",
       data: heatRows,
       inverse: true,
-      axisLabel: { color: slate },
+      axisLabel: { color: slate, fontSize: 12 },
       axisLine: { lineStyle: { color: gridLine } },
       axisTick: { show: false },
     },
